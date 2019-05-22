@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    # 解决上传中中文乱码问题
+    url: jdbc:mysql://localhost:3306/simplelife?characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    #   数据源其他配置,直接在这里配置不会起到作用，需要另外的配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
